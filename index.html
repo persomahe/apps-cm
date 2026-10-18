@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Découvrez Repas et Suivi-contrats, deux applications iOS pensées pour simplifier le quotidien." />
+		<meta name="theme-color" content="#f7f7f2" />
+		<title>Des outils simples pour votre quotidien</title>
+		<style>
+			:root {
+				--ink: #17231f;
+				--muted: #63716c;
+				--cream: #f7f7f2;
+				--paper: #fffefa;
+				--sage: #dbe9df;
+				--green: #174d3a;
+				--coral: #e8785f;
+				--line: rgba(23, 35, 31, 0.12);
+				--shadow: 0 22px 60px rgba(32, 59, 46, 0.1);
+			}
+
+			* { box-sizing: border-box; }
+			html { scroll-behavior: smooth; }
+			body {
+				margin: 0;
+				color: var(--ink);
+				background: var(--cream);
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+				line-height: 1.6;
+			}
+
+			a { color: inherit; text-decoration: none; }
+			.container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+			header {
+				padding: 26px 0;
+				border-bottom: 1px solid var(--line);
+			}
+			.nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+			.brand { display: flex; align-items: center; gap: 11px; font-weight: 750; letter-spacing: -0.02em; }
+			.brand-mark {
+				display: grid; place-items: center; width: 38px; height: 38px;
+				color: white; background: var(--green); border-radius: 12px; font-size: 19px;
+			}
+			.nav-links { display: flex; gap: 28px; color: var(--muted); font-size: 14px; }
+			.nav-links a:hover { color: var(--green); }
+
+			.hero { position: relative; padding: 104px 0 112px; overflow: hidden; }
+			.hero::before {
+				content: ""; position: absolute; width: 420px; height: 420px; right: -100px; top: 15px;
+				background: var(--sage); border-radius: 50%; filter: blur(1px); opacity: .8; z-index: -1;
+			}
+			.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 80px; }
+			.eyebrow { margin: 0 0 20px; color: var(--coral); text-transform: uppercase; letter-spacing: .16em; font-size: 12px; font-weight: 800; }
+			h1, h2, h3, p { margin-top: 0; }
+			h1 { max-width: 650px; margin-bottom: 24px; font-size: clamp(44px, 6vw, 78px); line-height: .98; letter-spacing: -.065em; font-weight: 780; }
+			.hero-copy { max-width: 510px; color: var(--muted); font-size: 18px; }
+			.button {
+				display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 13px 18px;
+				color: white; background: var(--green); border-radius: 999px; font-size: 14px; font-weight: 700;
+				transition: transform .2s ease, background .2s ease;
+			}
+			.button:hover { background: #23674f; transform: translateY(-2px); }
+
+			.phone-stack { position: relative; min-height: 360px; }
+			.phone {
+				position: absolute; width: 190px; height: 350px; padding: 11px; background: #1d2925;
+				border: 6px solid #101815; border-radius: 30px; box-shadow: var(--shadow);
+			}
+			.phone::before { content: ""; display: block; width: 55px; height: 15px; margin: 0 auto 12px; background: #101815; border-radius: 0 0 12px 12px; }
+			.screen { height: calc(100% - 27px); padding: 18px 14px; border-radius: 18px; background: #eef4ed; overflow: hidden; }
+			.screen-label { color: var(--muted); font-size: 9px; font-weight: 700; }
+			.screen-title { margin: 4px 0 18px; font-size: 21px; line-height: 1.05; font-weight: 800; }
+			.screen-card { padding: 12px; margin-bottom: 9px; background: white; border-radius: 12px; font-size: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05); }
+			.screen-card strong { display: block; margin-bottom: 4px; font-size: 11px; }
+			.screen-card span { color: var(--muted); }
+			.phone.one { left: 12%; top: 15px; transform: rotate(-9deg); }
+			.phone.two { right: 8%; top: 0; transform: rotate(9deg); background: #293934; }
+			.phone.two .screen { background: #fff1e8; }
+			.badge { display: inline-flex; padding: 5px 9px; margin-bottom: 14px; color: var(--green); background: var(--sage); border-radius: 999px; font-size: 10px; font-weight: 750; }
+
+			.apps { padding: 94px 0; background: var(--paper); }
+			.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 38px; }
+			h2 { margin-bottom: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1; letter-spacing: -.05em; }
+			.section-heading p { max-width: 370px; margin-bottom: 0; color: var(--muted); }
+			.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+			.app-card { padding: 30px; border: 1px solid var(--line); border-radius: 26px; background: var(--cream); }
+			.app-icon { display: grid; place-items: center; width: 58px; height: 58px; margin-bottom: 24px; border-radius: 17px; font-size: 28px; background: #f5c977; }
+			.app-card:nth-child(2) .app-icon { background: #bcd9ed; }
+			.app-card h3 { margin-bottom: 10px; font-size: 26px; letter-spacing: -.04em; }
+			.app-card p { margin-bottom: 24px; color: var(--muted); }
+			.features { display: grid; gap: 11px; padding-top: 20px; border-top: 1px solid var(--line); }
+			.feature { display: flex; gap: 10px; align-items: start; font-size: 14px; }
+			.feature::before { content: "✓"; display: grid; place-items: center; flex: 0 0 20px; height: 20px; color: var(--green); background: var(--sage); border-radius: 50%; font-size: 12px; font-weight: 800; }
+
+			.values { padding: 86px 0; }
+			.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 42px; margin-top: 42px; }
+			.value-number { color: var(--coral); font-size: 13px; font-weight: 800; }
+			.value h3 { margin: 10px 0 8px; font-size: 19px; }
+			.value p { margin: 0; color: var(--muted); font-size: 14px; }
+
+			footer { padding: 26px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+			.footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+
+			@media (max-width: 760px) {
+				.container { width: min(100% - 32px, 560px); }
+				.nav-links { gap: 14px; font-size: 13px; }
+				.hero { padding: 72px 0 74px; }
+				.hero-grid, .app-grid { grid-template-columns: 1fr; gap: 54px; }
+				.phone-stack { max-width: 420px; width: 100%; margin: 0 auto; }
+				.section-heading, .footer-inner { display: block; }
+				.section-heading p { margin-top: 18px; }
+				.values-grid { grid-template-columns: 1fr; gap: 26px; }
+				footer p { margin-bottom: 8px; }
+			}
+			@media (max-width: 430px) {
+				.nav-links a:first-child { display: none; }
+				.phone { width: 165px; height: 305px; }
+				.phone-stack { min-height: 320px; }
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="container nav">
+				<a class="brand" href="index.html"><span class="brand-mark">✦</span><span>Apps CM</span></a>
+				<nav class="nav-links" aria-label="Navigation principale">
+					<a href="#applications">Applications</a>
+					<a href="#approche">Notre approche</a>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero">
+				<div class="container hero-grid">
+					<div>
+						<p class="eyebrow">Des apps pensées pour vous</p>
+						<h1>Moins de charge mentale. Plus de clarté.</h1>
+						<p class="hero-copy">Deux applications iOS simples et utiles pour mieux organiser vos repas et garder vos contrats sous contrôle, au quotidien.</p>
+						<a class="button" href="#applications">Découvrir les applications <span aria-hidden="true">↗</span></a>
+					</div>
+					<div class="phone-stack" aria-label="Aperçu des applications Repas et Suivi-contrats">
+						<div class="phone one">
+							<div class="screen"><span class="screen-label">CETTE SEMAINE</span><div class="screen-title">Mes repas</div><div class="screen-card"><strong>🍋 Salade de saison</strong><span>Déjeuner · Mardi</span></div><div class="screen-card"><strong>🍝 Pâtes aux légumes</strong><span>Dîner · Mercredi</span></div><div class="screen-card"><strong>🥣 Soupe maison</strong><span>Dîner · Jeudi</span></div></div>
+						</div>
+						<div class="phone two">
+							<div class="screen"><span class="screen-label">MON ACTIVITÉ</span><div class="screen-title">Mes contrats</div><span class="badge">3 échéances à venir</span><div class="screen-card"><strong>Assurance habitation</strong><span>Renouvellement · 12 nov.</span></div><div class="screen-card"><strong>Abonnement internet</strong><span>Actif · 49,99 € / mois</span></div><div class="screen-card"><strong>Forfait mobile</strong><span>Actif · 19,99 € / mois</span></div></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="apps" id="applications">
+				<div class="container">
+					<div class="section-heading"><h2>Deux apps,<br />deux essentiels.</h2><p>Des interfaces pensées pour aller à l’essentiel, sans distraction ni complication.</p></div>
+					<div class="app-grid">
+						<article class="app-card">
+							<div class="app-icon" aria-hidden="true">🍽️</div>
+							<h3>Repas</h3>
+							<p>Planifiez vos repas plus sereinement et retrouvez facilement vos idées au moment où vous en avez besoin.</p>
+							<div class="features"><div class="feature">Organisez vos repas de la semaine</div><div class="feature">Retrouvez vos recettes et idées favorites</div><div class="feature">Gagnez du temps au quotidien</div></div>
+						</article>
+						<article class="app-card">
+							<div class="app-icon" aria-hidden="true">📄</div>
+							<h3>Suivi-contrats</h3>
+							<p>Centralisez vos contrats et gardez une vue claire sur vos engagements, leurs échéances et leurs informations importantes.</p>
+							<div class="features"><div class="feature">Regroupez vos contrats au même endroit</div><div class="feature">Suivez les dates et renouvellements</div><div class="feature">Consultez vos informations en un instant</div></div>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section class="values" id="approche">
+				<div class="container">
+					<p class="eyebrow">Notre approche</p>
+					<h2>Simple par choix.</h2>
+					<div class="values-grid">
+						<div class="value"><span class="value-number">01</span><h3>Clair</h3><p>Une expérience lisible qui vous permet de trouver rapidement ce que vous cherchez.</p></div>
+						<div class="value"><span class="value-number">02</span><h3>Pratique</h3><p>Des outils conçus autour des situations concrètes de la vie quotidienne.</p></div>
+						<div class="value"><span class="value-number">03</span><h3>Discret</h3><p>Vos applications restent au service de vos besoins, avec une expérience sans surcharge.</p></div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<div class="container footer-inner"><p>© 2026 Apps CM. Tous droits réservés.</p><p>Applications disponibles sur iOS.</p></div>
+		</footer>
+	</body>
+</html>
