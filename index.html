@@ -86,6 +86,7 @@
 			.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 			.app-card { padding: 30px; border: 1px solid var(--line); border-radius: 26px; background: var(--cream); }
 			.app-icon { display: grid; place-items: center; width: 58px; height: 58px; margin-bottom: 24px; border-radius: 17px; font-size: 28px; background: #f5c977; }
+			.app-icon img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 17px; }
 			.app-card:nth-child(2) .app-icon { background: #bcd9ed; }
 			.app-card h3 { margin-bottom: 10px; font-size: 26px; letter-spacing: -.04em; }
 			.app-card p { margin-bottom: 24px; color: var(--muted); }
@@ -127,6 +128,7 @@
 				<nav class="nav-links" aria-label="Navigation principale">
 					<a href="#applications">Applications</a>
 					<a href="#approche">Notre approche</a>
+					<a href="support.html">Support</a>
 				</nav>
 			</div>
 		</header>
@@ -137,7 +139,7 @@
 					<div>
 						<p class="eyebrow">Des apps pensées pour vous</p>
 						<h1>Moins de charge mentale. Plus de clarté.</h1>
-						<p class="hero-copy">Deux applications iOS simples et utiles pour mieux organiser vos repas et garder vos contrats sous contrôle, au quotidien.</p>
+						<p class="hero-copy">Deux applications iOS simples et utiles pour organiser vos repas et suivre vos contrats sans stress, au quotidien.</p>
 						<a class="button" href="#applications">Découvrir les applications <span aria-hidden="true">↗</span></a>
 					</div>
 					<div class="phone-stack" aria-label="Aperçu des applications Repas et Suivi-contrats">
@@ -156,16 +158,16 @@
 					<div class="section-heading"><h2>Deux apps,<br />deux essentiels.</h2><p>Des interfaces pensées pour aller à l’essentiel, sans distraction ni complication.</p></div>
 					<div class="app-grid">
 						<article class="app-card">
-							<div class="app-icon" aria-hidden="true">🍽️</div>
+							<div class="app-icon" aria-hidden="true"><img src="IconeRepas1.jpg" alt="Icône Repas" /></div>
 							<h3>Repas</h3>
-							<p>Planifiez vos repas plus sereinement et retrouvez facilement vos idées au moment où vous en avez besoin.</p>
-							<div class="features"><div class="feature">Organisez vos repas de la semaine</div><div class="feature">Retrouvez vos recettes et idées favorites</div><div class="feature">Gagnez du temps au quotidien</div></div>
+							<p>Planifiez votre semaine en choisissant des recettes adaptées à votre besoin, avec un nombre de parts par repas. La semaine génère automatiquement une liste de courses, que vous pouvez compléter selon vos envies et partager avec votre entourage.</p>
+							<div class="features"><div class="feature">Choisissez des recettes pour chaque repas de la semaine</div><div class="feature">Définissez le nombre de parts pour chaque plat</div><div class="feature">Générez une liste de courses automatiquement, puis ajoutez des produits complémentaires</div><div class="feature">Consultez chaque recette via un lien internet et partagez la liste avec votre conjoint</div></div>
 						</article>
 						<article class="app-card">
-							<div class="app-icon" aria-hidden="true">📄</div>
+							<div class="app-icon" aria-hidden="true"><img src="icon_SuiviContrat1.jpg" alt="Icône Suivi-contrats" /></div>
 							<h3>Suivi-contrats</h3>
-							<p>Centralisez vos contrats et gardez une vue claire sur vos engagements, leurs échéances et leurs informations importantes.</p>
-							<div class="features"><div class="feature">Regroupez vos contrats au même endroit</div><div class="feature">Suivez les dates et renouvellements</div><div class="feature">Consultez vos informations en un instant</div></div>
+							<p>Centralisez vos contrats et gardez une vue claire sur vos engagements, leurs échéances et leurs informations importantes. Ne manquez plus une échéance, anticipez les renouvellements et repérez les moments idéaux pour renégocier à date anniversaire.</p>
+							<div class="features"><div class="feature">Regroupez vos contrats au même endroit</div><div class="feature">Ne ratez plus une échéance</div><div class="feature">Pensez à renégocier vos contrats à date anniversaire</div><div class="feature">Recevez des notifications avant la date anniversaire de vos contrats</div></div>
 						</article>
 					</div>
 				</div>
@@ -185,7 +187,7 @@
 		</main>
 
 		<footer>
-			<div class="container footer-inner"><p>© 2026 Apps CM. Tous droits réservés.</p><p>Applications disponibles sur iOS.</p></div>
+			<div class="container footer-inner"><p>© 2026 Céline Mahé. Tous droits réservés.</p><p>Applications disponibles sur iOS.</p></div>
 		</footer>
 	</body>
 </html>
